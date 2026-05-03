@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Book Finder App</title>
+  </head>
+  <body>
+    <h1>Book Finder App</h1>
+    <p>Search for your favorite book</p>
+
+    <!-- SEARCH FORM -->
+    <form action="/" method="GET">
+      <input type="text" name="book" placeholder="Enter book name" />
+      <button type="submit">Search</button>
+    </form>
+
+    <hr />
+
+    <!-- BOOK LIST -->
+    <h2>Books</h2>
+
+    <% if (books && books.length > 0) { %>
+      <ul>
+        <% books.forEach((book) => { %>
+          <li>
+            <strong><%= book.title %></strong> - <%= book.author %>
+          </li>
+        <% }) %>
+      </ul>
+    <% } else { %>
+      <p>No books found 😢</p>
+    <% } %>
+
+  </body>
+</html>
